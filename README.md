@@ -61,8 +61,11 @@ Queries are also useful to "denormalize" data. For example, to view a post we ma
         { author : User
         , title : String
         , content : String
-        , comments : List ( User, String )
+        , comments : List CommentView
         }
+    
+    type alias CommentView =
+        { author : User, content : String }
 
 
 We can't save `PostView`'s directly in our model, but we can write a query to get a PostView!
@@ -91,7 +94,7 @@ We can't save `PostView`'s directly in our model, but we can write a query to ge
 
     queryCommentView : Comment -> Query Model CommentView
     queryCommentView comment =
-        Query.map2 Tuple.pair
+        Query.map2 CommentView
             (Query.dictByKey .users comment.author)
             (Query.succeed comment.content)
 
