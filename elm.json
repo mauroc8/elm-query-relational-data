@@ -4,6 +4,7 @@
     "summary": "Build and combine, and perform queries to a relational database",
     "license": "BSD-3-Clause",
     "elm-version": "0.19.1",
+    "version": "1.0.0",
     "exposed-modules": [
         "Query",
         "Query.Advanced"
