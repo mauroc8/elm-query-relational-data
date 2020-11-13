@@ -1,0 +1,9 @@
+{
+    "name": "mauroc8/query",
+    "summary": "Build and combine, and perform queries to a relational database",
+    "version": "1.0.0",
+    "exposed-modules": [
+        "Query",
+        "Query.Advanced"
+    ]
+}
